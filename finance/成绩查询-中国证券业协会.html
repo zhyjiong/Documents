@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0119)http://exam.sac.net.cn/pages/login/exam_print.html?SSG_GREAD_ID=25836877&EXAM_TIME=2019-04-27&APP_ID=610629199106250033 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<script type="text/javascript" src="./成绩查询-中国证券业协会_files/Library.js.下载"></script>
+<script type="text/javascript" src="./成绩查询-中国证券业协会_files/QueryLibrary.js.下载"></script><link href="./成绩查询-中国证券业协会_files/css.css" type="text/css" rel="stylesheet" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"><link href="./成绩查询-中国证券业协会_files/jquery-ui-1.8.2.custom.css" type="text/css" rel="stylesheet" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"><link href="./成绩查询-中国证券业协会_files/ui.jqgrid.css" type="text/css" rel="stylesheet" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"><script type="text/javascript" src="./成绩查询-中国证券业协会_files/jquery-1.6.2.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/JsObject.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/Ajax.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/HtmlUtil.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/OpenUtils.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/grid.locale-cn.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/jquery.jqGrid.min.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/jquery-ui-1.8.14.custom.min.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/JGridButton.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/JqgridBuilder.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/WdatePicker.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><link href="./成绩查询-中国证券业协会_files/WdatePicker.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="./成绩查询-中国证券业协会_files/safety.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script><script type="text/javascript" src="./成绩查询-中国证券业协会_files/sac.js.下载" onerror="alert(&#39;Error loading &#39; + this.src);" charset="UTF-8"></script>
+<script type="text/javascript" src="./成绩查询-中国证券业协会_files/Ajax.js.下载"></script>
+<script type="text/javascript" src="./成绩查询-中国证券业协会_files/SelectUtils.js.下载"></script>
+<script type="text/javascript" src="./成绩查询-中国证券业协会_files/Security.js.下载"></script>
+<script type="text/javascript" src="./成绩查询-中国证券业协会_files/SessionTimeout.js.下载"></script>
+<meta http-equiv="Expires" content="0">
+<title>成绩查询-中国证券业协会</title>
+<link href="./成绩查询-中国证券业协会_files/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin: 0px;
+}
+-->
+</style>
+<script type="text/javascript">
+$(document).ready(function (){
+	var obj = JsObject.HtmlUtil.receiveHtmParameterVal();
+	//$("#updatePersonal").validate();
+	if(null ==obj["SSG_GREAD_ID"] || ''==obj["SSG_GREAD_ID"] || undefined==obj["SSG_GREAD_ID"]){
+		alert('信息有误');
+		return;
+	}
+	var result = window.JsObject.Ajax.load('resource!search.action', {'filter_EQS_SSG_GREAD_ID':obj["SSG_GREAD_ID"],'filter_EQS_SSG_EXAM_TIME':obj["EXAM_TIME"],'filter_EQS_APP_ID':obj["APP_ID"],'sqlkey':'homepage','sqlval':'HONG_KAOSHI_SELECT111'},'json');
+	if(result.length>0)
+		{
+			var datetime=result[0]["SSG_EXAM_TIME"];
+			var year=datetime.substring(0,4);
+			var month=datetime.substring(5,7);
+			var day=datetime.substring(8,10);  
+			if(result[0]["SUB_NAME"]=='证券公司高级管理人员资质测试'){
+				var _datetime=result[0]["PUBLISH_DATE"];
+				var _year=_datetime.substring(0,4);  
+				var	_month=_datetime.substring(5,7);
+				var _day=_datetime.substring(8,10);
+				$('#userInfo').html(result[0]["NAME"]+'，证件号码:'+result[0]["APP_ID"]+'，于'+year+'年'+month+'月'+day+'日参加'+result[0]["SUB_NAME"]+'，成绩合格。成绩自公布之日起三年内有效。');
+				$('#datetime').html(_year+'年'+_month+'月'+_day+'日');
+			}else if(result[0]["SUB_NAME"]=='投资银行业务专业考试' || result[0]["SUB_NAME"]=='证券知识综合考试'){
+				$('#userInfo').html(result[0]["NAME"]+'，证件号码:'+result[0]["APP_ID"]+'，于'+year+'年'+month+'月'+day+'日参加'+result[0]["SUB_NAME"]+'，成绩合格');
+				$('#datetime').html(year+'年'+month+'月');
+			}else{
+				$('#userInfo').html(result[0]["NAME"]+'，证件号码:'+result[0]["APP_ID"]+'，于'+year+'年'+month+'月'+day+'日参加'+result[0]["SUB_NAME"]+'考试，成绩合格');
+				$('#datetime').html(year+'年'+month+'月');
+			}    
+			$('#sizeNO').html(result[0]["SSG_ADMISSION_CARD"]);
+			
+			if(result[0]["SSI_PHOTO_PATH"]!=null && result[0]["SSI_PHOTO_PATH"]!='')
+			{
+				$('#customer_photo').attr('src','../../photo/images/'+result[0]["SSI_PHOTO_PATH"]);
+			} else if(result[0]["SSI_PHOTO_PATH"]==null || result[0]["SSI_PHOTO_PATH"]==''){
+				var resultSB = window.JsObject.Ajax.load('resource!search.action', {'filter_EQS_SSI_FIFTEN_CARD_NUM':obj["APP_ID"],'sqlkey':'homepage','sqlval':'KAOSHIZHAOPIAN15'},'json');
+				if(resultSB.length==0 || resultSB[0]["SSI_PHOTO_PATH"]==null || resultSB[0]["SSI_PHOTO_PATH"]==''){
+					var resultBB = window.JsObject.Ajax.load('resource!search.action', {'filter_EQS_SSI_CARD_NUM':obj["APP_ID"],'sqlkey':'homepage','sqlval':'KAOSHIZHAOPIAN'},'json');
+					$('#customer_photo').attr('src','../../photo/images/'+resultBB[0]["SSI_PHOTO_PATH"]);
+			
+				}else{
+					$('#customer_photo').attr('src','../../photo/images/'+resultSB[0]["SSI_PHOTO_PATH"]);
+					
+				}
+				
+			} 
+			
+		}
+	else
+		{
+		alert("考试系统无此证件号码！");
+		return;
+		}
+});
+</script>
+</head>
+<body style="background:url(../../images/certB.jpg) no-repeat center top">
+<table width="700" height="475" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#0000FF">
+  <tbody><tr>
+    <td height="68">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+          <td width="579" height="100"></td>
+          <td width="271" align="center" id="photo1"><img width="100" height="133" name="customer_photo" id="customer_photo" src="./成绩查询-中国证券业协会_files/155661954532911429JJmhE.jpg"></td></tr>
+      </tbody></table></td>
+  </tr>
+  <tr>
+    <td height="70" style="padding:0px 70px 0px 50px;text-align:left; line-height:200%;display:inline;"><p style="text-indent:2em;"><font id="userInfo" size="4">张养炯，证件号码:610629199106250033，于2019年04月27日参加金融市场基础知识考试，成绩合格</font></p></td>
+  </tr>     
+  <tr>     
+    <td height="95">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="122" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td width="190" height="20" style="text-align:right"><font id="sizeNO" size="2">201904440300102734980440300</font></td>
+          <td>&nbsp;</td>
+          <td width="340" align="center"><font id="datetime" size="2">2019年04月</font></td>
+        </tr>
+        <tr>
+          <td height="100%" colspan="3"></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+</tbody></table>
+
+
+</body></html>
